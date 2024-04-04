@@ -1,11 +1,9 @@
-#ifndef Adafruit_I2CDevice_h
-#define Adafruit_I2CDevice_h
+#pragma once
 
 #include <Arduino.h>
 #include <Wire.h>
 
-#include "../src/utilities/utilities.h"
-#include "../src/constants/constants.h"
+#include "utilities/utilities.h"
 
 
 ///< The class which defines how we will talk to this device over I2C
@@ -36,4 +34,3 @@ private:
     size_t _maxBufferSize;
     bool _read(uint8_t *buffer, size_t len, bool stop);
 };
-#endif
