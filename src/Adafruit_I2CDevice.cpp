@@ -62,7 +62,13 @@ void Adafruit_I2CDevice::end() {
  */
 bool Adafruit_I2CDevice::detected() {
     // Init I2C if not done yet
-    if (!this->_begun && !this->begin()) {
+#ifdef UNIT_TEST
+bool addr_detect = false;
+#else
+bool addr_detect = true;
+#endif
+
+    if (!this->_begun && !this->begin(addr_detect)) {
         return false;
     }
 
